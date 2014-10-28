@@ -1,14 +1,17 @@
+.gitattributes
+.gitignore
 .htaccess
-/config.php
-admin/config.php
+www/config.php
+www/admin/config.php
 
 !index.html
 
-download/
-image/data/
-image/cache/
-system/cache/
-system/logs/
+www/download/
+www/image/data/
+www/image/cache/
+www/system/cache/
+www/system/logs/
+www/vqmod/vqcache/
 
 # =========================
 # Operating System Files
