@@ -12,6 +12,7 @@ www/image/cache/
 www/system/cache/
 www/system/logs/
 www/vqmod/vqcache/
+www/vqmod/*.cache
 
 # =========================
 # Operating System Files
