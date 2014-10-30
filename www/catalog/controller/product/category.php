@@ -28,12 +28,6 @@ class ControllerProductCategory extends Controller {
 		} else {
 			$order = 'ASC';
 		}
-		
-		if (isset($this->request->get['coolfilter'])) {
-	        $coolfilter = $this->request->get['coolfilter'];
-		} else {
-	        $coolfilter = '';
-		}
 
 		if (isset($this->request->get['page'])) {
 			$page = $this->request->get['page'];
@@ -68,10 +62,6 @@ class ControllerProductCategory extends Controller {
 				$url .= '&order=' . $this->request->get['order'];
 			}
 
-			if (isset($this->request->get['coolfilter'])) {
-	          $url .= '&coolfilter=' . $this->request->get['coolfilter'];
-	        }
-
 			if (isset($this->request->get['limit'])) {
 				$url .= '&limit=' . $this->request->get['limit'];
 			}
@@ -91,11 +81,7 @@ class ControllerProductCategory extends Controller {
 
 				$category_info = $this->model_catalog_category->getCategory($path_id);
 
-				if ($category_info || $path_id == 0) {
-					
-					if ($path_id == 0) {
-						$category_info['name'] = $this->language->get('text_all_products');
-					}
+				if ($category_info) {
 					$this->data['breadcrumbs'][] = array(
 						'text'      => $category_info['name'],
 						'href'      => $this->url->link('product/category', 'path=' . $path . $url),
@@ -109,20 +95,7 @@ class ControllerProductCategory extends Controller {
 
 		$category_info = $this->model_catalog_category->getCategory($category_id);
 
-		if ($category_info || $category_id == 0) {
-					if ($category_id == 0) {
-						$category_info = array('name' => $this->language->get('text_all_products'),
-							'seo_title' => '',
-							'meta_description' => '',
-							'meta_keyword' => '',
-							'seo_h1' => $this->language->get('text_all_products'),
-							'image' => '',
-							'description' => '');
-						//india style fix	
-						$this->request->get['path'] = 0;
-						//india style fix							
-					}
-		
+		if ($category_info) {
 			if ($category_info['seo_title']) {
 		  		$this->document->setTitle($category_info['seo_title']);
 			} else {
@@ -173,17 +146,9 @@ class ControllerProductCategory extends Controller {
 				$url .= '&order=' . $this->request->get['order'];
 			}
 
-			if (isset($this->request->get['coolfilter'])) {
-	          $url .= '&coolfilter=' . $this->request->get['coolfilter'];
-	        }
-
 			if (isset($this->request->get['page'])) {
 				$url .= '&page=' . $this->request->get['page'];
 			}
-			
-			if (isset($this->request->get['coolfilter'])) {
-	          $url .= '&coolfilter=' . $this->request->get['coolfilter'];
-	        }
 
 			if (isset($this->request->get['limit'])) {
 				$url .= '&limit=' . $this->request->get['limit'];
@@ -220,10 +185,6 @@ class ControllerProductCategory extends Controller {
 				$url .= '&order=' . $this->request->get['order'];
 			}
 
-			if (isset($this->request->get['coolfilter'])) {
-	          $url .= '&coolfilter=' . $this->request->get['coolfilter'];
-	        }
-
 			if (isset($this->request->get['limit'])) {
 				$url .= '&limit=' . $this->request->get['limit'];
 			}
@@ -238,11 +199,10 @@ class ControllerProductCategory extends Controller {
 					'filter_sub_category' => true
 				);
 
-				$product_total = $this->model_catalog_product->getTotalProducts($data, $coolfilter);			
+				$product_total = $this->model_catalog_product->getTotalProducts($data);			
 
 				$this->data['categories'][] = array(
 					'name'  => $result['name'] . ($this->config->get('config_product_count') ? ' (' . $product_total . ')' : ''),
-					'count' => $product_total,
 					'href'  => $this->url->link('product/category', 'path=' . $this->request->get['path'] . '_' . $result['category_id'] . $url)
 				);
 			}
@@ -258,9 +218,9 @@ class ControllerProductCategory extends Controller {
 				'limit'              => $limit
 			);
 
-			$product_total = $this->model_catalog_product->getTotalProducts($data, $coolfilter); 
+			$product_total = $this->model_catalog_product->getTotalProducts($data);
 
-			$results = $this->model_catalog_product->getProducts($data, $coolfilter);
+			$results = $this->model_catalog_product->getProducts($data);
 
 			foreach ($results as $result) {
 				if ($result['image']) {
