@@ -25,7 +25,6 @@ class ControllerCommonHeader extends Controller {
 		$this->data['text_attribute'] = $this->language->get('text_attribute');
 		$this->data['text_attribute_group'] = $this->language->get('text_attribute_group');
 		$this->data['text_backup'] = $this->language->get('text_backup');
-		$this->data['text_cachemanager'] = $this->language->get('text_cachemanager');
 		$this->data['text_seomanager'] = $this->language->get('text_seomanager');
 		$this->data['text_seomanager'] = $this->language->get('text_seomanager');
 		$this->data['text_vqmod_manager'] = $this->language->get('text_vqmod_manager');
@@ -135,7 +134,6 @@ class ControllerCommonHeader extends Controller {
 			$this->data['attribute'] = $this->url->link('catalog/attribute', 'token=' . $this->session->data['token'], 'SSL');
 			$this->data['attribute_group'] = $this->url->link('catalog/attribute_group', 'token=' . $this->session->data['token'], 'SSL');
 			$this->data['backup'] = $this->url->link('tool/backup', 'token=' . $this->session->data['token'], 'SSL');
-			$this->data['cachemanager'] = $this->url->link('tool/cachemanager', 'token=' . $this->session->data['token'], 'SSL');
 			$this->data['seomanager'] = $this->url->link('tool/seomanager', 'token=' . $this->session->data['token'], 'SSL');
 			$this->data['vqmod_manager'] = $this->url->link('tool/vqmod_manager', 'token=' . $this->session->data['token'], 'SSL');
 			$this->data['banner'] = $this->url->link('design/banner', 'token=' . $this->session->data['token'], 'SSL');

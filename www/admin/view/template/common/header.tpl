@@ -188,7 +188,6 @@ $(document).ready(function(){
           </li>
           <li><a href="<?php echo $error_log; ?>"><?php echo $text_error_log; ?></a></li>
 		  <li><a href="<?php echo $backup; ?>"><?php echo $text_backup; ?></a></li>
-          <li><a href="<?php echo $cachemanager; ?>"><?php echo $text_cachemanager; ?></a></li>
 		  <li><a href="<?php echo $seomanager; ?>"><?php echo $text_seomanager; ?></a></li>
 		  <li><a href="<?php echo $vqmod_manager; ?>"><?php echo $text_vqmod_manager; ?></a></li>
         </ul>
