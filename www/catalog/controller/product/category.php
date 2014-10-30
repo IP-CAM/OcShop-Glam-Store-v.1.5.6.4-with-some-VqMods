@@ -236,11 +236,10 @@ class ControllerProductCategory extends Controller {
 			foreach ($results as $result) {
 				$data = array(
 					'filter_category_id'  => $result['category_id'],
-					'filter_sub_category' => true,
-					'coolfilter'         => $coolfilter
+					'filter_sub_category' => true
 				);
 
-				$product_total = $this->model_catalog_product->getTotalProducts($data);				
+				$product_total = $this->model_catalog_product->getTotalProducts($data, $coolfilter);			
 
 				$this->data['categories'][] = array(
 					'name'  => $result['name'] . ($this->config->get('config_product_count') ? ' (' . $product_total . ')' : ''),
@@ -257,13 +256,12 @@ class ControllerProductCategory extends Controller {
 				'sort'               => $sort,
 				'order'              => $order,
 				'start'              => ($page - 1) * $limit,
-				'limit'              => $limit,
-				'coolfilter'         => $coolfilter
+				'limit'              => $limit
 			);
 
-			$product_total = $this->model_catalog_product->getTotalProducts($data); 
+			$product_total = $this->model_catalog_product->getTotalProducts($data, $coolfilter); 
 
-			$results = $this->model_catalog_product->getProducts($data);
+			$results = $this->model_catalog_product->getProducts($data, $coolfilter);
 
 			foreach ($results as $result) {
 				if ($result['image']) {
@@ -354,17 +352,9 @@ class ControllerProductCategory extends Controller {
 			if (isset($this->request->get['filter'])) {
 				$url .= '&filter=' . $this->request->get['filter'];
 			}
-			
-			if (isset($this->request->get['coolfilter'])) {
-				$url .= '&coolfilter=' . $this->request->get['coolfilter'];
-			}
 
 			if (isset($this->request->get['limit'])) {
 				$url .= '&limit=' . $this->request->get['limit'];
-			}
-			
-			if (isset($this->request->get['coolfilter'])) {
-				$url .= '&coolfilter=' . $this->request->get['coolfilter'];
 			}
 
 			$this->data['sorts'] = array();
@@ -439,10 +429,6 @@ class ControllerProductCategory extends Controller {
 				$url .= '&order=' . $this->request->get['order'];
 			}
 			
-			if (isset($this->request->get['coolfilter'])) {
-				$url .= '&coolfilter=' . $this->request->get['coolfilter'];
-			}
-
 			$this->data['limits'] = array();
 
 			$limits = array_unique(array($this->config->get('config_catalog_limit'), 25, 50, 75, 100));
@@ -473,10 +459,6 @@ class ControllerProductCategory extends Controller {
 
 			if (isset($this->request->get['limit'])) {
 				$url .= '&limit=' . $this->request->get['limit'];
-			}
-			
-			if (isset($this->request->get['coolfilter'])) {
-				$url .= '&coolfilter=' . $this->request->get['coolfilter'];
 			}
 
 			$pagination = new Pagination();
