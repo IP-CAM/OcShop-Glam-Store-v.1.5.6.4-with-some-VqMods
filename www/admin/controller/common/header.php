@@ -36,6 +36,8 @@ class ControllerCommonHeader extends Controller {
 		$this->data['text_category'] = $this->language->get('text_category');
 		$this->data['text_confirm'] = $this->language->get('text_confirm');
 		$this->data['text_country'] = $this->language->get('text_country');
+		$this->data['text_coolfilter'] = $this->language->get('text_coolfilter');
+		$this->data['text_coolfilter_group'] = $this->language->get('text_coolfilter_group');
 		$this->data['text_cms'] = $this->language->get('text_cms');
 		$this->data['text_news'] = $this->language->get('text_news');
 		$this->data['text_article'] = $this->language->get('text_article');
@@ -142,6 +144,18 @@ class ControllerCommonHeader extends Controller {
 			$this->data['sticker'] = $this->url->link('design/sticker', 'token=' . $this->session->data['token'], 'SSL');
 			$this->data['benefit'] = $this->url->link('design/benefit', 'token=' . $this->session->data['token'], 'SSL');
 			$this->data['category'] = $this->url->link('catalog/category', 'token=' . $this->session->data['token'], 'SSL');
+			
+			$this->load->model('setting/extension');
+            $extensions = $this->model_setting_extension->getInstalled('module');
+            $extension = 'coolfilter';
+            if (in_array($extension, $extensions)) {
+                $this->data['coolfilter'] = $this->url->link('catalog/coolfilter', 'token=' . $this->session->data['token'], 'SSL');
+				$this->data['coolfilter_group'] = $this->url->link('catalog/coolfilter_group', 'token=' . $this->session->data['token'], 'SSL');
+            }else{
+                $this->data['coolfilter'] = '';
+				$this->data['coolfilter_group'] = '';
+            }
+			
 			$this->data['news'] = $this->url->link('blog/news', 'token=' . $this->session->data['token'], 'SSL');
 			$this->data['article'] = $this->url->link('blog/article', 'token=' . $this->session->data['token'], 'SSL');
 			$this->data['gallery'] = $this->url->link('blog/gallery', 'token=' . $this->session->data['token'], 'SSL');
