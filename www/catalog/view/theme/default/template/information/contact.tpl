@@ -23,7 +23,14 @@
         <?php echo $fax; ?>
         <?php } ?>
       </div>
-    </div>
+	  <?php if ($maps) { ?>
+		<div class="column-maps">
+			<ul>
+				<li><?php echo $maps; ?></li>
+			</ul>
+		</div>
+	  <?php } ?>
+	  </div>
     </div>
     <h2><?php echo $text_contact; ?></h2>
     <div class="content">
