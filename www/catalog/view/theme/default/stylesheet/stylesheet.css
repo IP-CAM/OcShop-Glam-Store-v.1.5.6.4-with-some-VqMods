@@ -435,6 +435,15 @@ label {
 	color: #CCCCCC;
 	margin-bottom: 10px;
 }
+#notification {
+	position: fixed;
+	z-index: 999;
+	width: 600px;
+	right: 50%;
+	margin-right: -300px;
+	top: 50%;
+	margin-top: -35px;
+}
 .success, .warning, .attention, .information {
 	padding: 10px 10px 10px 33px;
 	margin-bottom: 15px;
