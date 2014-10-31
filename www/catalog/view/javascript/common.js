@@ -128,16 +128,11 @@ function addToCart(product_id, quantity) {
 			if (json['success']) {
 				$('#notification').html('<div class="success" style="display: none;">' + json['success'] + '<img src="catalog/view/theme/default/image/close.png" alt="" class="close" /></div>');
 				
-				$('.success').fadeIn(1000).delay(2000).fadeOut(1500);	// Плавное открытие - скрытие уведомления через 2 сек.
+				$('.success').fadeIn('slow');
 				
 				$('#cart-total').html(json['total']);
 				
-				$('#cart .heading').fadeTo(350, 0.1); 
-				$('#cart .heading').fadeTo(350, 1); 
-				$('#cart .heading').fadeTo(350, 0.1); 
-				$('#cart .heading').fadeTo(350, 1); 
-				$('#cart .heading').fadeTo(350, 0.1); 
-				$('#cart .heading').fadeTo(350, 1);
+				$('html, body').animate({ scrollTop: 0 }, 'slow'); 
 			}	
 		}
 	});
@@ -158,6 +153,7 @@ function addToWishList(product_id) {
 				
 				$('#wishlist-total').html(json['total']);
 				
+				$('html, body').animate({ scrollTop: 0 }, 'slow');
 			}	
 		}
 	});
@@ -179,6 +175,7 @@ function addToCompare(product_id) {
 				
 				$('#compare-total').html(json['total']);
 				
+				$('html, body').animate({ scrollTop: 0 }, 'slow'); 
 			}	
 		}
 	});
