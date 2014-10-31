@@ -52,15 +52,22 @@ class ControllerSettingSetting extends Controller {
 		$this->data['entry_address'] = $this->language->get('entry_address');
 		$this->data['entry_email'] = $this->language->get('entry_email');
 		$this->data['entry_telephone'] = $this->language->get('entry_telephone');
+		$this->data['entry_telephone_1'] = $this->language->get('entry_telephone_1');
+		$this->data['entry_telephone_2'] = $this->language->get('entry_telephone_2');
 		$this->data['entry_fax'] = $this->language->get('entry_fax');
 		$this->data['entry_welcome'] = $this->language->get('entry_welcome');
 		$this->data['entry_maps'] = $this->language->get('entry_maps');
 		$this->data['entry_maps'] = $this->language->get('entry_maps');
 		$this->data['entry_vk'] = $this->language->get('entry_vk');
 		$this->data['entry_fb'] = $this->language->get('entry_fb');
+		$this->data['entry_ok'] = $this->language->get('entry_ok');
+		$this->data['entry_my'] = $this->language->get('entry_my');
+		$this->data['entry_livejournal'] = $this->language->get('entry_livejournal');
 		$this->data['entry_googleplus'] = $this->language->get('entry_googleplus');
-		$this->data['entry_youtube'] = $this->language->get('entry_youtube');
 		$this->data['entry_twitter'] = $this->language->get('entry_twitter');
+		$this->data['entry_pinterest'] = $this->language->get('entry_pinterest');
+		$this->data['entry_youtube'] = $this->language->get('entry_youtube');
+		$this->data['entry_instagram'] = $this->language->get('entry_instagram');
 		$this->data['entry_time'] = $this->language->get('entry_time');
 		$this->data['entry_title'] = $this->language->get('entry_title');
 		$this->data['entry_meta_description'] = $this->language->get('entry_meta_description');
@@ -407,7 +414,19 @@ class ControllerSettingSetting extends Controller {
 		} else {
 			$this->data['config_telephone'] = $this->config->get('config_telephone');
 		}
+		
+		if (isset($this->request->post['config_telephone_1'])) {
+			$this->data['config_telephone_1'] = $this->request->post['config_telephone_1'];
+		} else {
+			$this->data['config_telephone_1'] = $this->config->get('config_telephone_1');
+		}
 
+		if (isset($this->request->post['config_telephone_2'])) {
+			$this->data['config_telephone_2'] = $this->request->post['config_telephone_2'];
+		} else {
+			$this->data['config_telephone_2'] = $this->config->get('config_telephone_2');
+		}
+		
 		if (isset($this->request->post['config_fax'])) {
 			$this->data['config_fax'] = $this->request->post['config_fax'];
 		} else {
@@ -438,10 +457,40 @@ class ControllerSettingSetting extends Controller {
 			$this->data['config_fb'] = $this->config->get('config_fb');
 		}
 		
+		if (isset($this->request->post['config_ok'])) {
+			$this->data['config_ok'] = $this->request->post['config_ok'];
+		} else {
+			$this->data['config_ok'] = $this->config->get('config_ok');
+		}
+		
+		if (isset($this->request->post['config_my'])) {
+			$this->data['config_my'] = $this->request->post['config_my'];
+		} else {
+			$this->data['config_my'] = $this->config->get('config_my');
+		}
+		
+		if (isset($this->request->post['config_livejournal'])) {
+			$this->data['config_livejournal'] = $this->request->post['config_livejournal'];
+		} else {
+			$this->data['config_livejournal'] = $this->config->get('config_livejournal');
+		}
+		
 		if (isset($this->request->post['config_googleplus'])) {
 			$this->data['config_googleplus'] = $this->request->post['config_googleplus'];
 		} else {
 			$this->data['config_googleplus'] = $this->config->get('config_googleplus');
+		}
+		
+		if (isset($this->request->post['config_twitter'])) {
+			$this->data['config_twitter'] = $this->request->post['config_twitter'];
+		} else {
+			$this->data['config_twitter'] = $this->config->get('config_twitter');
+		}
+		
+		if (isset($this->request->post['config_pinterest'])) {
+			$this->data['config_pinterest'] = $this->request->post['config_pinterest'];
+		} else {
+			$this->data['config_pinterest'] = $this->config->get('config_pinterest');
 		}
 		
 		if (isset($this->request->post['config_youtube'])) {
@@ -450,10 +499,10 @@ class ControllerSettingSetting extends Controller {
 			$this->data['config_youtube'] = $this->config->get('config_youtube');
 		}
 		
-		if (isset($this->request->post['config_twitter'])) {
-			$this->data['config_twitter'] = $this->request->post['config_twitter'];
+		if (isset($this->request->post['config_instagram'])) {
+			$this->data['config_instagram'] = $this->request->post['config_instagram'];
 		} else {
-			$this->data['config_twitter'] = $this->config->get('config_twitter');
+			$this->data['config_instagram'] = $this->config->get('config_instagram');
 		}
 		
 		if (isset($this->request->post['config_time'])) {

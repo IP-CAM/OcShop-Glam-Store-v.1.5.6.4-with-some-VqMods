@@ -75,13 +75,19 @@ class ControllerCommonFooter extends Controller {
 		$this->data['address'] = nl2br($this->config->get('config_address'));
 		$this->data['email'] = $this->config->get('config_email');
 		$this->data['telephone'] = $this->config->get('config_telephone');
+		$this->data['telephone_1'] = $this->config->get('config_telephone_1');
+		$this->data['telephone_2'] = $this->config->get('config_telephone_2');
 		$this->data['fax'] = $this->config->get('config_fax');
-		$this->data['maps'] = html_entity_decode($this->config->get('config_maps'));
 		$this->data['vk'] = $this->config->get('config_vk');
 		$this->data['fb'] = $this->config->get('config_fb');
+		$this->data['ok'] = $this->config->get('config_ok');
+		$this->data['my'] = $this->config->get('config_my');
+		$this->data['livejournal'] = $this->config->get('config_livejournal');
 		$this->data['googleplus'] = $this->config->get('config_googleplus');
-		$this->data['youtube'] = $this->config->get('config_youtube');
 		$this->data['twitter'] = $this->config->get('config_twitter');
+		$this->data['pinterest'] = $this->config->get('config_pinterest');
+		$this->data['youtube'] = $this->config->get('config_youtube');
+		$this->data['instagram'] = $this->config->get('config_instagram');
 		$this->data['time'] = $this->config->get('config_time');
 		$this->data['time'] = html_entity_decode($this->config->get('config_time'));
 

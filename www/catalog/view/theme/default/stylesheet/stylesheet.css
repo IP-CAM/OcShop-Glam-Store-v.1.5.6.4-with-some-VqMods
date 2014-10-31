@@ -1862,12 +1862,6 @@ ul.box-filter > li ul {
     padding-top: 5px;
     width: 95%;
 }
-.column-maps {
-  float: right;
-  height: 220px;
-  width: 430px;
-  border: 1px solid #DBDEE1;
-}
 #footer {
 	margin-left: auto;
     margin-right: auto;
@@ -1935,8 +1929,69 @@ ul.box-filter > li ul {
 #social a:hover {
 	color: #ccc;
 }
-#social .fa {
+#social .vkontakte {
 	padding-right: 10px;
+}
+.soc-icon{
+	margin: 0 3px;
+	left: 0;
+	top:0;
+	position: relative;
+	width: 30px;
+	height: 30px;
+	display: inline-block; 
+	vertical-align: middle;
+	cursor: pointer;
+}
+.icon-vkontakte{
+	background-image: url(../image/social-ico.png);	
+	background-position: -124px 0px;
+	background-repeat: no-repeat;    
+}
+.icon-facebook{
+	background-image: url(../image/social-ico.png);	
+	background-position: 0px 0px;
+	background-repeat: no-repeat;    
+}
+.icon-odnoklassniki{
+	background-image: url(../image/social-ico.png);	
+	background-position: -93px 0px;
+	background-repeat: no-repeat;    
+}
+.icon-mail_ru{
+	background-image: url(../image/social-ico.png);	
+	background-position: -217px 0px;
+	background-repeat: no-repeat;    
+}
+.icon-livejournal{
+	background-image: url(../image/social-ico.png);	
+	background-position: -248px 0px;
+	background-repeat: no-repeat;    
+}
+.icon-google-plus{
+	background-image: url(../image/social-ico.png);	
+	background-position: -186px 0px;
+	background-repeat: no-repeat;    
+}
+.icon-youtube{
+	background-image: url(../image/social-ico.png);	
+	background-position: -1395px 0px;
+	background-repeat: no-repeat;    
+}
+.icon-pinterest{
+	background-image: url(../image/social-ico.png);	
+	background-position: -155px 0px;
+	background-repeat: no-repeat;    
+}
+.icon-instagram{
+	background-image: url(../image/social-ico.png);	
+	background-position: -1427px 0px;
+	background-repeat: no-repeat;
+}
+.icon-twitter{
+	background-image: url(../image/social-ico.png);	
+	background-position: -31px 0px;
+	background-repeat: no-repeat;
 }
 #footer hr {
 	clear: both;
