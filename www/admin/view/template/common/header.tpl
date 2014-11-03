@@ -73,7 +73,15 @@ $(document).ready(function(){
         <ul>
           <li><a href="<?php echo $category; ?>"><?php echo $text_category; ?></a></li>
           <li><a href="<?php echo $product; ?>"><?php echo $text_product; ?></a></li>
-		  <li><a href="index.php?route=module/batch_editor&token=<?php echo $this->session->data['token']; ?>">Batch Editor</a></li>
+		  <?php if($coolfilter != ''){ ?>
+          <li>
+			<a href="<?php echo $coolfilter; ?>" class="parent"><?php echo $text_coolfilter; ?></a>
+			<ul style="display: none; visibility: hidden;">
+				<li><a href="<?php echo $coolfilter; ?>"><?php echo $text_coolfilter; ?></a></li>
+				<li><a href="<?php echo $coolfilter_group; ?>"><?php echo $text_coolfilter_group; ?></a></li>
+			</ul>
+		  </li>
+          <?php } ?>
           <li><a href="<?php echo $filter; ?>"><?php echo $text_filter; ?></a></li>
           <li><a href="<?php echo $profile; ?>"><?php echo $text_profile; ?></a></li>
           <li><a class="parent"><?php echo $text_attribute; ?></a>
@@ -189,6 +197,7 @@ $(document).ready(function(){
           </li>
           <li><a href="<?php echo $error_log; ?>"><?php echo $text_error_log; ?></a></li>
 		  <li><a href="<?php echo $backup; ?>"><?php echo $text_backup; ?></a></li>
+          <li><a href="<?php echo $cachemanager; ?>"><?php echo $text_cachemanager; ?></a></li>
 		  <li><a href="<?php echo $seomanager; ?>"><?php echo $text_seomanager; ?></a></li>
 		  <li><a href="<?php echo $vqmod_manager; ?>"><?php echo $text_vqmod_manager; ?></a></li>
         </ul>
