@@ -5,14 +5,16 @@ www/config.php
 www/admin/config.php
 
 !index.html
-
+*.bak
 www/download/
 www/image/data/
 www/image/cache/
 www/system/cache/
 www/system/logs/
 www/vqmod/vqcache/
+www/vqmod/logs/
 www/vqmod/*.cache
+
 
 # =========================
 # Operating System Files
