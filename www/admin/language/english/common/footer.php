@@ -1,4 +1,4 @@
 <?php
 // Text
-$_['text_footer'] = '<a href="http://ocshop.info">OCSHOP.CMS</a> &copy; 2009-' . date('Y') . ' All Rights Reserved.<br />Version %s';
+$_['text_footer'] = '<a href="http://glam-store.com.ua/">glam-store.com.ua</a>' '  &copy; 2013-' . date('Y') . '<br />All Rights Reserved.';
 ?>

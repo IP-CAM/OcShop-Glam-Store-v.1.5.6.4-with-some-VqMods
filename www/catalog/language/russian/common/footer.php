@@ -19,5 +19,5 @@ $_['text_account']      = 'Личный Кабинет';
 $_['text_order']        = 'История заказов';
 $_['text_wishlist']     = 'Закладки';
 $_['text_newsletter']   = 'Рассылка';
-$_['text_powered']      = '%s &copy; %s';
+$_['text_powered']      = '%s <a href="http://glam-store.com.ua/">glam-store.com.ua</a><br />  &copy; 2013-' . date('Y') .'. Все права защищены.';
 ?>
