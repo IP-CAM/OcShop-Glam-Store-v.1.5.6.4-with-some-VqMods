@@ -391,7 +391,7 @@ color: #FE4172;
 	border-radius: 5px;
 }
 #menu > ul > li > a.active {
-background: #000000;
+background: #ddd;
 color: #FE4172;
 	font-weight: bold;
 	-webkit-border-radius: 5px;
@@ -1057,7 +1057,7 @@ ul.box-filter > li ul {
 }
 .product-list > div {
 	overflow: auto;
-	min-height: 170px;
+	min-height: 240px;
 	margin-bottom: 15px;
 	overflow: visible;
 }
@@ -1852,8 +1852,8 @@ ul.box-filter > li ul {
 	color: #38B0E3;
 	float: left;
 	font-size: 14px;
-	margin-left: 20px;
-	width: 275px;
+	margin-left: 50px;
+	width: 220px;
 }
 .column-contacts a{
 color: #38B0E3;
@@ -1862,7 +1862,7 @@ color: #38B0E3;
     padding-top: 7px;
 }
 .column-contacts li.footer-time{
-    margin-top: 8px;
+    margin-top: 6px;
 	float: left;
 }
 .footer-time .fa,
@@ -1870,8 +1870,15 @@ color: #38B0E3;
     padding-right: 5px;
 }
 .column-contacts li.footer-address{
-    border-bottom: 1px solid #EEE;
     border-top: 1px solid #EEE;
+    margin-bottom: 5px;
+    margin-top: 10px;
+    padding-bottom: 5px;
+    padding-top: 5px;
+    width: 95%;
+}
+.column-contacts li.footer-time+li{
+    border-bottom: 1px solid #EEE;
     margin-bottom: 5px;
     margin-top: 10px;
     padding-bottom: 5px;
