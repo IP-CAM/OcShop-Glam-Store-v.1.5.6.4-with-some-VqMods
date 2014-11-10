@@ -347,11 +347,16 @@ label {
 }
 /* menu */
 #menu {
-	background: #F8F8F8;
+	background: #eee;
 	height: 37px;
 	margin-bottom: 15px;
 	position: relative;
     z-index: 9;
+	-webkit-border-radius: 3px 3px 0px 0px;
+	-moz-border-radius: 3px 3px 0px 0px;
+	-khtml-border-radius: 3px 3px 0px 0px;
+	border-radius: 3px 3px 0px 0px;
+	padding: 0px 5px;
 }
 #menu ul {
 	list-style: none;
@@ -378,11 +383,21 @@ label {
 	position: relative;
 }
 #menu > ul > li:hover > a {
-	color: #FE4172;
+background: #ddd;
+color: #FE4172;
+	-webkit-border-radius: 5px;
+	-moz-border-radius: 5px;
+	-khtml-border-radius: 5px;
+	border-radius: 5px;
 }
 #menu > ul > li > a.active {
-	color: #FE4172;
+background: #000000;
+color: #FE4172;
 	font-weight: bold;
+	-webkit-border-radius: 5px;
+	-moz-border-radius: 5px;
+	-khtml-border-radius: 5px;
+	border-radius: 5px;
 }
 #menu > ul > li > div {
 	display: none;
@@ -391,7 +406,11 @@ label {
 	z-index: 5;
 	padding: 5px;
 	border: 1px solid #D4D4D4;
-	background: url('../image/menu.png');
+-webkit-border-radius: 0px 0px 3px 3px;
+	-moz-border-radius: 0px 0px 3px 3px;
+	-khtml-border-radius: 0px 0px 3px 3px;
+	border-radius: 0px 0px 3px 3px;
+/*	background: url('../image/menu.png');*/
 }
 #menu > ul > li:hover > div {
 	display: table;
@@ -405,12 +424,14 @@ label {
 #menu > ul > li ul > li > a {
 	text-decoration: none;
 	padding: 4px;
+color: #FFFFFF;
 	display: block;
 	white-space: nowrap;
 	min-width: 120px;
 }
 #menu > ul > li ul > li > a:hover {
-	color: #FE4172;
+	background: #F8F8F8;
+color: #FE4172;
 }
 #menu > ul > li > div > ul > li > a {
 	color: #666666;
@@ -1116,11 +1137,11 @@ ul.box-filter > li ul {
 	border-top: 1px solid #DBDEE1;
 	border-bottom: 1px solid #DBDEE1;
 	float: left;
-	height: 300px;
+	height: 390px;
 	vertical-align: top;
 	padding: 10px;
 	margin-top: -1px;
-	width: 175px;
+	width: 240px;
 }
 #column-left + #column-right + #content .product-grid > div {
 	width: 125px;
@@ -1833,6 +1854,9 @@ ul.box-filter > li ul {
 	font-size: 14px;
 	margin-left: 20px;
 	width: 275px;
+}
+.column-contacts a{
+color: #38B0E3;
 }
 .column-contacts li{
     padding-top: 7px;
