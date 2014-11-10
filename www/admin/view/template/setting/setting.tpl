@@ -72,6 +72,10 @@
               <td><?php echo $entry_telephone_2; ?></td>
               <td><input type="text" name="config_telephone_2" value="<?php echo $config_telephone_2; ?>" size="40"/></td>
             </tr>
+			<tr>
+              <td><?php echo $entry_skype; ?></td>
+              <td><input type="text" name="config_skype" value="<?php echo $config_skype; ?>" size="40"/></td>
+            </tr>
             <tr>
               <td><?php echo $entry_fax; ?></td>
               <td><input type="text" name="config_fax" value="<?php echo $config_fax; ?>" size="40"/></td>

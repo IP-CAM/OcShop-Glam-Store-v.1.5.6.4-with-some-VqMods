@@ -13,8 +13,9 @@
 		<li><i class="fa fa-phone"></i> <?php echo $telephone; ?></li>
 		<?php if ($telephone_1) { ?><li><i class="fa fa-phone"></i> <?php echo $telephone_1; ?></li><?php } ?>
 		<?php if ($telephone_2) { ?><li><i class="fa fa-phone"></i> <?php echo $telephone_2; ?></li><?php } ?>
+		<?php if ($skype) { ?><li><i class="fa fa-skype"></i><a href="skype:<?php echo $skype; ?>?chat"><?php echo $skype; ?></a></li><?php } ?> 
 		<?php if ($fax) { ?><li><i class="fa fa-fax"></i> <?php echo $fax; ?></li><?php } ?>
-		<li><i class="fa fa-envelope"></i> <?php echo $email; ?></li>
+		<li><i class="fa fa-envelope"></i><a href="mailto:<?php echo $email; ?>"><?php echo $email; ?></a></li>
 		<li class="footer-address"><i class="fa fa-home"></i> <?php echo $address; ?></li>
 		<li class="footer-time"><i class="fa fa-clock-o fa-lg"></i></li>
 		<li><?php echo $time; ?></li>

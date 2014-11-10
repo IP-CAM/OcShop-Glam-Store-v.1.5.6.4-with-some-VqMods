@@ -32,6 +32,7 @@ $_['entry_email']                  = 'E-Mail:';
 $_['entry_telephone']              = 'Telephone:';
 $_['entry_telephone_1']            = 'Telephone:';
 $_['entry_telephone_2']            = 'Telephone:';
+$_['entry_skype']          		   = 'Skype:';
 $_['entry_fax']                    = 'Fax:';
 $_['entry_welcome']                = 'Welcome:';
 $_['entry_maps']                   = 'Yandex Maps:<br /><span class="help"><a target="_blank" href="http://api.yandex.ru/maps/tools/constructor/">Designer maps</a><br />Width: 430 Height: 220</span>';

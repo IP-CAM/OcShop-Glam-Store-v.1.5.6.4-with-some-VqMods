@@ -55,6 +55,7 @@ class ControllerSettingSetting extends Controller {
 		$this->data['entry_telephone_1'] = $this->language->get('entry_telephone_1');
 		$this->data['entry_telephone_2'] = $this->language->get('entry_telephone_2');
 		$this->data['entry_fax'] = $this->language->get('entry_fax');
+		$this->data['entry_skype'] = $this->language->get('entry_skype');
 		$this->data['entry_welcome'] = $this->language->get('entry_welcome');
 		$this->data['entry_maps'] = $this->language->get('entry_maps');
 		$this->data['entry_maps'] = $this->language->get('entry_maps');
@@ -431,6 +432,12 @@ class ControllerSettingSetting extends Controller {
 			$this->data['config_fax'] = $this->request->post['config_fax'];
 		} else {
 			$this->data['config_fax'] = $this->config->get('config_fax');
+		}
+		
+		if (isset($this->request->post['config_skype'])) {
+			$this->data['config_skype'] = $this->request->post['config_skype'];
+		} else {
+			$this->data['config_skype'] = $this->config->get('config_skype');
 		}
 		
 		if (isset($this->request->post['config_welcome'])) {

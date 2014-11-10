@@ -32,6 +32,7 @@ $_['entry_email']                = 'E-Mail:';
 $_['entry_telephone']            = 'Телефон:';
 $_['entry_telephone_1']          = 'Телефон:';
 $_['entry_telephone_2']          = 'Телефон:';
+$_['entry_skype']                = 'Skype:';
 $_['entry_fax']                  = 'Факс:';
 $_['entry_welcome']              = 'Приветствие:';
 $_['entry_maps']                 = 'Яндекс карта:<br /><span class="help"><a target="_blank" href="http://api.yandex.ru/maps/tools/constructor/">Конструктор карт</a><br />Ширина: 430 Высота: 220</span>';
