@@ -151,44 +151,40 @@ label {
 }
 #header #cart {
 	position: absolute;
-	top: 53px;
+	top: 40px;
 	right: 0px;
-	z-index: 9;
+	z-index: 99;
 	min-width: 300px;
 }
 #header #cart .heading {
+	background: #eee;
+	border: 1px solid #FE4172;
 	float: right;
-	margin-right: 112px;
-	margin-top: 15px;
-	padding-left: 14px;
-	padding-right: 14px;
-	border: 1px solid #F8F8F8;
-	background: #F8F8F8;
+	margin-right: 0;
+	margin-top: 33px;
+	padding: 0 15px 0 0;
 	position: relative;
 	z-index: 1;
 }
-#header #cart .heading:hover {
-	background: #FFF;
-	border-top: 1px solid #FFFFFF;
-	border-left: 1px solid #FFFFFF;
-	border-right: 1px solid #EEEEEE;
-	border-bottom: none;
-
-}
-#header #cart .heading .heading-title {
-	color: #333333;
-	font-size: 13px;
-	font-weight: bold;
-	margin-top: 0px;
-	margin-bottom: 3px;
-}
 #header #cart .heading a {
-	color: #38B0E3;
+	color: #FE4172;
 	text-decoration: none;
 }
 #header #cart .heading a span {
-	padding-right: 6px;
+	color: #999;
+	font-size: 14px;
 	line-height: 25px;
+	padding-right: 6px;
+}
+#header #cart .heading a span:hover {
+	color: #333;
+}
+#header #cart .heading .fa.fa-shopping-cart.fa-lg {
+  background: #FE4172;
+  color: #FFFFFF;
+  margin-right: 5px;
+  padding: 15px;
+  font-size: 2em;
 }
 #header #cart .heading .fa-sort-asc {
     vertical-align: 1px;
@@ -200,30 +196,21 @@ label {
 	top: -1px;
 	padding: 8px;
 	min-height: 150px;
-	border-top: 1px solid #EEEEEE;
-	border-left: 1px solid #EEEEEE;
-	border-right: 1px solid #EEEEEE;
-	border-bottom: 1px solid #EEEEEE;
-	-webkit-border-radius: 0px 7px 7px 7px;
-	-moz-border-radius: 0px 7px 7px 7px;
-	-khtml-border-radius: 0px 7px 7px 7px;
-	border-radius: 0px 7px 7px 7px;
-	-webkit-box-shadow: 0px 2px 2px #DDDDDD;
-	-moz-box-shadow: 0px 2px 2px #DDDDDD;
-	box-shadow: 0px 2px 2px #DDDDDD;
+	border: 1px solid #FE4172;
 	background: #FFF;
 }
 #header #cart.active .heading {
-	margin-top: 5px;
-	padding-top: 10px;
-	padding-bottom: 6px;
-	border-top: 1px solid #EEEEEE;
-	border-left: 1px solid #EEEEEE;
-	border-right: 1px solid #EEEEEE;
-	-webkit-border-radius: 7px 7px 0px 0px;
-	-moz-border-radius: 7px 7px 0px 0px;
-	-khtml-border-radius: 7px 7px 0px 0px;
-	border-radius: 7px 7px 0px 0px;
+	border: 1px solid #FE4172;
+	border-bottom: none;
+	background: #FFF;
+	padding: 0 14px 0 0;
+}
+#header #cart.active .heading a span {
+	color: #333;
+}
+#header #cart.active .heading .fa.fa-shopping-cart.fa-lg {
+  padding-top: 15px;
+  padding-left: 15px;
 }
 #header #cart.active .content {
 	display: block;
