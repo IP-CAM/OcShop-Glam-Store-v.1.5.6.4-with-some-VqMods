@@ -788,6 +788,14 @@ input[type="submit"].button.button-mini {
 	z-index: 2;
 	overflow: auto;
 }
+#tab-description .right-description {
+width: 48%;
+float: right;
+}
+#tab-description .left-description {
+width: 48%;
+float: left;
+}
 /* box */
 .box {
 	margin-bottom: 20px;
@@ -1386,7 +1394,7 @@ ul.box-filter > li ul {
 	color: #000000;
 	font-weight: bold;
 	text-align: right;
-	width: 20%;
+	width: 35%;
 }
 .attribute td {
 	padding: 7px;
