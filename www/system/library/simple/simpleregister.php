@@ -43,7 +43,7 @@ class SimpleRegister extends Simple {
             'customer_group_id' => $this->getCustomerGroupId()            
         );
 
-        $fieldsInfo['email'] = !empty($fieldsInfo['email']) ? $fieldsInfo['email'] : 'empty@localhost.loc';
+        $fieldsInfo['email'] = !empty($fieldsInfo['email']) ? $fieldsInfo['email'] : 'empty@localhost.localhost';
 
         $customInfo = $this->getCustomFields($this->_page, 'customer');
 
