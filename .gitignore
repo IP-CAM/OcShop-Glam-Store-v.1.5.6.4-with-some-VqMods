@@ -6,6 +6,7 @@ www/admin/config.php
 
 !index.html
 *.bak
+*.cache
 www/download/
 www/image/data/
 www/image/cache/
