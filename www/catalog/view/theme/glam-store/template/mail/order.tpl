@@ -52,7 +52,6 @@
   <table style="border-collapse: collapse; width: 100%; border-top: 1px solid #DDDDDD; border-left: 1px solid #DDDDDD; margin-bottom: 20px;">
     <thead>
       <tr>
-        <td style="font-size: 12px; border-right: 1px solid #DDDDDD; border-bottom: 1px solid #DDDDDD; background-color: #EFEFEF; font-weight: bold; text-align: left; padding: 7px; color: #222222;"><?php echo $text_payment_address; ?></td>
         <?php if ($shipping_address) { ?>
         <td style="font-size: 12px; border-right: 1px solid #DDDDDD; border-bottom: 1px solid #DDDDDD; background-color: #EFEFEF; font-weight: bold; text-align: left; padding: 7px; color: #222222;"><?php echo $text_shipping_address; ?></td>
         <?php } ?>
@@ -60,7 +59,6 @@
     </thead>
     <tbody>
       <tr>
-        <td style="font-size: 12px;	border-right: 1px solid #DDDDDD; border-bottom: 1px solid #DDDDDD; text-align: left; padding: 7px;"><?php echo $payment_address; ?></td>
         <?php if ($shipping_address) { ?>
         <td style="font-size: 12px;	border-right: 1px solid #DDDDDD; border-bottom: 1px solid #DDDDDD; text-align: left; padding: 7px;"><?php echo $shipping_address; ?></td>
         <?php } ?>
@@ -100,15 +98,13 @@
         <td style="font-size: 12px;	border-right: 1px solid #DDDDDD; border-bottom: 1px solid #DDDDDD; text-align: right; padding: 7px;"><?php echo $voucher['amount']; ?></td>
       </tr>
       <?php } ?>
-    </tbody>
-    <tfoot>
-      <?php foreach ($totals as $total) { ?>
+	  <?php foreach ($totals as $total) { ?>
       <tr>
         <td style="font-size: 12px;	border-right: 1px solid #DDDDDD; border-bottom: 1px solid #DDDDDD; text-align: right; padding: 7px;" colspan="4"><b><?php echo $total['title']; ?>:</b></td>
         <td style="font-size: 12px;	border-right: 1px solid #DDDDDD; border-bottom: 1px solid #DDDDDD; text-align: right; padding: 7px;"><?php echo $total['text']; ?></td>
       </tr>
       <?php } ?>
-    </tfoot>
+    </tbody>
   </table>
   <p style="margin-top: 0px; margin-bottom: 20px;"><?php echo $text_footer; ?></p>
   <p style="margin-top: 0px; margin-bottom: 20px;"><?php echo $text_powered; ?></p>
