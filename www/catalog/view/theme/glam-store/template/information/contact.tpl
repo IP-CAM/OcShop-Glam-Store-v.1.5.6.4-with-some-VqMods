@@ -9,19 +9,24 @@
   <form action="<?php echo $action; ?>" method="post" enctype="multipart/form-data">
     <h2><?php echo $text_location; ?></h2>
     <div class="contact-info">
-      <div class="content"><div class="left"><b><?php echo $text_address; ?></b><br />
-        <?php echo $store; ?><br />
-        <?php echo $address; ?></div>
+      <div class="content">
+		<div class="left">
+		  <ul>
+			<li><?php echo $store; ?><br /></li>
+			<li class="contact-address"><i class="fa fa-home"></i><?php echo $address; ?></li>
+			<li class="contact-time"><i class="fa fa-clock-o fa-lg"></i></li>
+			<li><?php echo $time; ?></li>
+		  </ul>
+		</div>
       <div class="right">
-        <?php if ($telephone) { ?>
-        <b><?php echo $text_telephone; ?></b><br />
-        <?php echo $telephone; ?><br />
-        <br />
-        <?php } ?>
-        <?php if ($fax) { ?>
-        <b><?php echo $text_fax; ?></b><br />
-        <?php echo $fax; ?>
-        <?php } ?>
+		<ul>
+			<li><i class="fa fa-phone"></i> <?php echo $telephone; ?></li>
+			<?php if ($telephone_1) { ?><li><i class="fa fa-phone"></i> <?php echo $telephone_1; ?></li><?php } ?>
+			<?php if ($telephone_2) { ?><li><i class="fa fa-phone"></i> <?php echo $telephone_2; ?></li><?php } ?>
+			<?php if ($fax) { ?><li><i class="fa fa-fax"></i> <?php echo $fax; ?></li><?php } ?>
+			<?php if ($skype) { ?><li><i class="fa fa-skype"></i><a href="skype:<?php echo $skype; ?>?chat"><?php echo $skype; ?></a></li><?php } ?> 
+			<li><i class="fa fa-envelope"></i><a href="mailto:<?php echo $email; ?>"><?php echo $email; ?></a></li>
+		</ul>	
       </div>
 	  <?php if ($maps) { ?>
 		<div class="column-maps">

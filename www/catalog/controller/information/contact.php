@@ -47,6 +47,8 @@ class ControllerInformationContact extends Controller {
 		$this->data['text_address'] = $this->language->get('text_address');
 		$this->data['text_telephone'] = $this->language->get('text_telephone');
 		$this->data['text_fax'] = $this->language->get('text_fax');
+		$this->data['time'] = $this->config->get('config_time');
+		$this->data['time'] = html_entity_decode($this->config->get('config_time'));
 
 		$this->data['entry_name'] = $this->language->get('entry_name');
 		$this->data['entry_email'] = $this->language->get('entry_email');
@@ -86,6 +88,10 @@ class ControllerInformationContact extends Controller {
 		$this->data['address'] = nl2br($this->config->get('config_address'));
 		$this->data['telephone'] = $this->config->get('config_telephone');
 		$this->data['fax'] = $this->config->get('config_fax');
+		$this->data['telephone_1'] = $this->config->get('config_telephone_1');
+		$this->data['telephone_2'] = $this->config->get('config_telephone_2');
+		$this->data['skype'] = html_entity_decode($this->config->get('config_skype'));
+		$this->data['email'] = $this->config->get('config_email');
 
 		if (isset($this->request->post['name'])) {
 			$this->data['name'] = $this->request->post['name'];

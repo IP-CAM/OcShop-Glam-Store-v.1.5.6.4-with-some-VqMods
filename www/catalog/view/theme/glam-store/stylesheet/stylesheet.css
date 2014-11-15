@@ -1780,12 +1780,28 @@ ul.box-filter > li ul {
 .contact-info {
 	overflow: auto;
 }
-.contact-info .left {
+#content .contact-info .content .left ul, #content .contact-info .content .right ul{
+	list-style: none outside none;
+	margin: 0;
+	padding: 0;
+	font-size: 14px;
+	margin-left: 50px;
+	width: 220px;
+}
+.contact-time .fa,
+.column-contacts .fa {
+    padding-right: 5px;
+}
+#content .contact-info li.footer-time {
+	margin-top: 6px;
+	float: left;
+}
+#content .contact-info .content .left{
 	float: left;
 	width: 48%;
 }
-.contact-info .right {
-	float: left;
+#content .contact-info .content .right {
+	float: right;
 	width: 48%;
 }
 .sitemap-info {
@@ -2192,4 +2208,16 @@ color: #38B0E3;
 }
 .testimonials #filter .button {
     float: right;
+}
+
+.column-maps {
+float: right;
+height: 270px;
+width: 760px;
+border: 1px solid #DBDEE1;
+}
+.column-maps > ul {
+list-style: none outside none;
+margin: 0;
+padding: 0;
 }
