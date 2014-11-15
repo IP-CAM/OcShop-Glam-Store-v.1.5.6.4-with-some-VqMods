@@ -33,7 +33,7 @@ p {
 	margin-bottom: 20px;
 }
 a, a:visited, a b {
-	color: #999999;
+	color: #666;
 	text-decoration: underline;
 	cursor: pointer;
 }
@@ -362,7 +362,7 @@ label {
 }
 #menu > ul > li > a {
 	font-size: 13px;
-	color: #666666;
+	color: #333;
 	line-height: 14px;
 	text-decoration: none;
 	display: block;
@@ -432,14 +432,14 @@ color: #FE4172;
 #notification {
 	position: fixed;
 	z-index: 999;
-	width: 600px;
-	right: 50%;
+	width: 460px;
+	right: 46%;
 	margin-right: -300px;
 	top: 50%;
 	margin-top: -35px;
 }
 .success, .warning, .attention, .information {
-	padding: 10px 10px 10px 33px;
+	padding: 30px 10px 30px 33px;
 	margin-bottom: 15px;
 	color: #555555;
 	-webkit-border-radius: 5px 5px 5px 5px;
@@ -448,8 +448,8 @@ color: #FE4172;
 	border-radius: 5px 5px 5px 5px;
 }
 .success {
-	background: #EAF7D9 url('../image/success.png') 10px center no-repeat;
-	border: 1px solid #BBDF8D;
+	background: #FFE9EE url('../image/success.png') 10px center no-repeat;
+	border: 1px solid #FE4172;
 	-webkit-border-radius: 5px 5px 5px 5px;
 	-moz-border-radius: 5px 5px 5px 5px;
 	-khtml-border-radius: 5px 5px 5px 5px;
