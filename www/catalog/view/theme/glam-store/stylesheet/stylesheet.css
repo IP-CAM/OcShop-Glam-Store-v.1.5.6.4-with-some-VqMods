@@ -581,6 +581,7 @@ table.radio tr.highlight:hover td {
 	padding: 4px 10px;
 	text-decoration: none;
 	color: #A3A3A3;
+	background: #F0DAE0;
 }
 .pagination .links b {
 	display: inline-block;
@@ -588,8 +589,8 @@ table.radio tr.highlight:hover td {
 	padding: 4px 10px;
 	font-weight: normal;
 	text-decoration: none;
-	color: #269BC6;
-	background: #FFFFFF;
+	color: #FFF;
+	background: #FE4172;
 }
 .pagination .results {
 	float: right;
@@ -844,7 +845,7 @@ float: left;
 	margin-bottom: 20px;
 	margin-right: 20px;
 	vertical-align: top;
-	width: 169px;
+	width: 168px;
 }
 #column-left + #column-right + #content .box-product > div {
 	width: 119px;
