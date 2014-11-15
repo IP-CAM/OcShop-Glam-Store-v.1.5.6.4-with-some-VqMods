@@ -316,6 +316,7 @@ label {
 	top: 3px;
 	font-size: 10px;
 	padding-right: 10px;
+	z-index: 101;
 }
 #header .links a {
 	float: left;
