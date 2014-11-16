@@ -15,7 +15,7 @@
 
 
                 <?php if ($testimonial['rating']) { ?>
-                  <img src="catalog/view/theme/default/image/testimonials/stars-<?php echo $testimonial['rating'] . '.png'; ?>" style="margin-top: 2px;" />
+                  <img src="catalog/view/theme/glam-store/image/stars-<?php echo $testimonial['rating'] . '.png'; ?>" style="margin-top: 2px;" />
                 <?php } ?>
 
 
