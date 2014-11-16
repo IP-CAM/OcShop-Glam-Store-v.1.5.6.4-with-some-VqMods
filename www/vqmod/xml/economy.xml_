@@ -1,0 +1,34 @@
+<modification>
+	<id>Добавляет вывод строки "Вы экномите ... руб." для акционных товаров</id>
+	<version>Делал для себя под ocStore 1.0.1, но пашет и на (OpenCart v.1.5.1)</version>
+	<vqmver>2.1.3</vqmver>
+	<author>Inetov</author>
+	
+	<file name="catalog/controller/product/product.php">
+		<operation>
+			<search position="before">
+				<![CDATA[if ($this->config->get('config_tax')) {]]>
+			</search>
+			<add>
+				<![CDATA[
+        if ((float)$product_info['special']) {
+				$this->data['economy'] = $this->currency->format((($product_info['special'])-($product_info['price']))*(-1)) ;
+			} else {
+				$this->data['special'] = false;
+			}
+      ]]>
+			</add>
+		</operation>
+	</file>
+	
+	<file name="catalog/view/theme/glam-store/template/product/product.tpl">
+		<operation error="skip">
+			<search position="after">
+				<![CDATA[<span class="price-old"><?php echo $price; ?></span> <span class="price-new"><?php echo $special; ?></span>]]>
+			</search>
+			<add>
+				<![CDATA[<br><span class="economy">Вы экономите <?php echo $economy; ?></span>]]>
+			</add>
+		</operation>
+	</file>
+</modification>
