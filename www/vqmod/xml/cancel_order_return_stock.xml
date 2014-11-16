@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<modification>
+	<id><![CDATA[Return to stock canceled orders]]></id>
+	<version><![CDATA[1.5.5.2]]></version>
+	<vqmver><![CDATA[2.5.x]]></vqmver>
+	<author><![CDATA[Valera Tumash + Doost]]></author>
+	<file name="admin/model/sale/order.php">
+		<operation>
+			<search position="after"><![CDATA[public function deleteOrder($order_id) {]]></search>
+			<add><![CDATA[$order_info = $this->getOrder($order_id);
+		if($order_info['order_status_id']==7) //  order status is canceled
+		{
+	        $this->uncancelOrder($order_id); // add products
+		}]]></add>
+		</operation>
+		<operation>
+			<search position="after"><![CDATA[public function addOrderHistory($order_id, $data) {]]></search>
+			<add><![CDATA[$order_info = $this->getOrder($order_id);
+		if($order_info['order_status_id']==7) //  order status is canceled
+		{
+		    if($data['order_status_id']!=7) // uncancel order
+		    {
+		        $this->uncancelOrder($order_id); // add products
+		    }
+		}
+		else // order is ok
+		{
+		    if($data['order_status_id']==7) // canceling
+		    {
+		        $this->cancelOrder($order_id);   // delete products
+		    }
+		}]]></add>
+		</operation>
+		<operation>
+			<search position="before" offset="1"><![CDATA[?>]]></search>
+			<add><![CDATA[
+	public function cancelOrder($order_id) {
+		$order_query = $this->db->query("SELECT * FROM `" . DB_PREFIX . "order` WHERE order_status_id > '0' AND order_id = '" . (int)$order_id . "'");
+
+		if ($order_query->num_rows) {
+			$product_query = $this->db->query("SELECT * FROM " . DB_PREFIX . "order_product WHERE order_id = '" . (int)$order_id . "'");
+
+			foreach($product_query->rows as $product) {
+				$this->db->query("UPDATE `" . DB_PREFIX . "product` SET quantity = (quantity + " . (int)$product['quantity'] . ") WHERE product_id = '" . (int)$product['product_id'] . "' AND subtract = '1'");
+
+				$option_query = $this->db->query("SELECT * FROM " . DB_PREFIX . "order_option WHERE order_id = '" . (int)$order_id . "' AND order_product_id = '" . (int)$product['order_product_id'] . "'");
+
+				foreach ($option_query->rows as $option) {
+					$this->db->query("UPDATE " . DB_PREFIX . "product_option_value SET quantity = (quantity + " . (int)$product['quantity'] . ") WHERE product_option_value_id = '" . (int)$option['product_option_value_id'] . "' AND subtract = '1'");
+				}
+			}
+		}
+	}
+	
+	public function uncancelOrder($order_id) {
+		$order_query = $this->db->query("SELECT * FROM `" . DB_PREFIX . "order` WHERE order_status_id > '0' AND order_id = '" . (int)$order_id . "'");
+
+		if ($order_query->num_rows) {
+			$product_query = $this->db->query("SELECT * FROM " . DB_PREFIX . "order_product WHERE order_id = '" . (int)$order_id . "'");
+
+			foreach($product_query->rows as $product) {
+				$this->db->query("UPDATE `" . DB_PREFIX . "product` SET quantity = (quantity - " . (int)$product['quantity'] . ") WHERE product_id = '" . (int)$product['product_id'] . "' AND subtract = '1'");
+
+				$option_query = $this->db->query("SELECT * FROM " . DB_PREFIX . "order_option WHERE order_id = '" . (int)$order_id . "' AND order_product_id = '" . (int)$product['order_product_id'] . "'");
+
+				foreach ($option_query->rows as $option) {
+					$this->db->query("UPDATE " . DB_PREFIX . "product_option_value SET quantity = (quantity - " . (int)$product['quantity'] . ") WHERE product_option_value_id = '" . (int)$option['product_option_value_id'] . "' AND subtract = '1'");
+				}
+			}
+		}
+	}
+]]></add>
+		</operation>
+	</file>
+
+</modification>
