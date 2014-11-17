@@ -1517,8 +1517,8 @@ function image_upload(field, thumb) {
 		},
 		bgiframe: false,
 		modal: false,
-		width: 960,
-		height: 520,
+		width: 800,
+		height: 400,
 		resizable: false,
 		modal: false,
 		dialogClass: 'dlg'
